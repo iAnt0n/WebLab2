@@ -1,0 +1,25 @@
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+         http://java.sun.com/xml/ns/javaee/web-app_4_0.xsd"
+         version="4.0">
+
+    <servlet>
+        <servlet-name>controllerServlet</servlet-name>
+        <servlet-class>ControllerServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>areaCheckServlet</servlet-name>
+        <servlet-class>AreaCheckServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>controllerServlet</servlet-name>
+        <url-pattern></url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>areaCheckServlet</servlet-name>
+        <url-pattern>/area-check</url-pattern>
+    </servlet-mapping>
+
+
+</web-app>
