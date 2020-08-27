@@ -1,7 +1,7 @@
 'use strict';
 
 function isValidY() {
-    let y = document.getElementById('y-value').value.replace(',', '.');
+    let y = document.getElementById('y-choice').value.substring(0,14).replace(',', '.');
     if (y !== "") {
         y = parseFloat(y);
         return !Number.isNaN(y) && y > -3 && y < 5;
@@ -32,6 +32,8 @@ function isValidR() {
 
 function validateAll() {
     const dot = document.getElementById('target-dot');
+    const yText = document.getElementById('y-text');
+    const yField = document.getElementById('y-choice');
     if (isValidX()) {
         document.getElementById('x-text').classList.toggle('invalid-choice', false);
         document.getElementById('x-text').classList.toggle('valid-choice', true);
@@ -41,15 +43,17 @@ function validateAll() {
     }
 
     if (isValidY()) {
-        document.getElementById('y-text').classList.toggle('invalid-choice', false);
-        document.getElementById('y-text').classList.toggle('valid-choice', true);
-        document.getElementById('y-value').classList.toggle('invalid-choice', false);
-        document.getElementById('y-value').classList.toggle('valid-choice', true);
+        yText.classList.toggle('invalid-choice', false);
+        yText.classList.toggle('valid-choice', true);
+        yField.classList.toggle('invalid-choice', false);
+        yField.classList.toggle('valid-choice', true);
+        document.getElementById('y-value').setAttribute('value', yField.value);
     } else {
-        document.getElementById('y-text').classList.toggle('valid-choice', false);
-        document.getElementById('y-text').classList.toggle('invalid-choice', true);
-        document.getElementById('y-value').classList.toggle('invalid-choice', true);
-        document.getElementById('y-value').classList.toggle('valid-choice', false);
+        yText.classList.toggle('valid-choice', false);
+        yText.classList.toggle('invalid-choice', true);
+        yField.classList.toggle('invalid-choice', true);
+        yField.classList.toggle('valid-choice', false);
+        document.getElementById('y-value').setAttribute('value', "");
     }
 
     if (isValidR()) {
@@ -64,10 +68,7 @@ function validateAll() {
 
         let r = Number(document.getElementsByClassName('r-button-active')[0].value);
         let x = Number(document.getElementsByClassName('x-button-active')[0].value);
-        let y = parseFloat(document.getElementById('y-value').value.replace(',', '.'));
-        document.getElementById('x-value').setAttribute('value', String(x));
-        document.getElementById('r-value').setAttribute('value', String(r));
-
+        let y = parseFloat(document.getElementById('y-choice').value.replace(',', '.'));
         let calcX = 200 + x * 180 / r; //point coordinates to svg coordinates
         let calcY = 200 - y * 180 / r;
         dot.setAttribute('r', "3");

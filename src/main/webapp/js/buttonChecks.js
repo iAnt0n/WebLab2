@@ -8,6 +8,7 @@ document.querySelectorAll('.x-choice-button').forEach(function (elem) {
             }
         });
         elem.classList.add('x-button-active');
+        document.getElementById('x-value').setAttribute('value', elem.value);
         validateAll();
     })
 });
@@ -20,6 +21,7 @@ document.querySelectorAll('.r-choice-button').forEach(function (elem) {
             }
         });
         elem.classList.add('r-button-active');
+        document.getElementById('r-value').setAttribute('value', elem.value);
         validateAll();
     })
 });

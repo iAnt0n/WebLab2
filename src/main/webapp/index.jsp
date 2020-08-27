@@ -37,7 +37,7 @@
         <tbody>
         <tr class="content-row">
             <td width="1%">
-                <svg height="400" width="400">
+                <svg id="graph" height="400" width="400">
                     <line class="axis" stroke="black" x1="0" x2="400" y1="200" y2="200"></line>
                     <line class="axis" stroke="black" x1="200" x2="200" y1="0" y2="400"></line>
 
@@ -78,7 +78,6 @@
             </td>
 
             <td>
-                <form id="user-input" action="<c:url value=""/>" method="post">
                     <table id="input-area">
                         <tbody>
                         <tr>
@@ -145,13 +144,13 @@
 
                         <tr>
                             <td>
-                                <label class="value-header" for="y-value" id="y-text">Y value</label>
+                                <label class="value-header" for="y-choice" id="y-text">Y value</label>
                             </td>
                         </tr>
                         <tr>
                             <td>
-                                <input class="y-choice-field" id="y-value" name="y" oninput="validateAll()"
-                                       placeholder="(-3...5) <=14 digits" type="text" value="">
+                                <input class="y-choice-field" id="y-choice" oninput="validateAll()"
+                                       placeholder="(-3...5) <=14 digits" type="text">
                             </td>
                         </tr>
 
@@ -195,23 +194,24 @@
                                 <table>
                                     <tbody>
                                     <tr>
-                                        <td class="form-button-cell">
-                                            <input disabled id="submit-button" type="submit" value="Submit">
-                                        </td>
-                                        <td class="form-button-cell">
-                                            <input id="clear-button" type="button" value="Clear">
-                                        </td>
+                                        <form id="user-input" action="<c:url value=""/>" method="post">
+                                            <td class="form-button-cell">
+                                                <input disabled id="submit-button" type="submit" value="Submit">
+                                            </td>
+                                            <td class="form-button-cell">
+                                                <input id="clear-button" type="button" value="Clear">
+                                            </td>
+                                                <input id="x-value" name="x" type="hidden" value="">
+                                                <input id="r-value" name="r" type="hidden" value="">
+                                                <input id="y-value" name="y" type="hidden" value="">
+                                        </form>
                                     </tr>
                                     </tbody>
                                 </table>
                             </td>
                         </tr>
-
                         </tbody>
                     </table>
-                    <input id="x-value" type="hidden" value="">
-                    <input id="r-value" type="hidden" value="">
-                </form>
             </td>
         </tr>
         </tbody>
@@ -267,10 +267,8 @@
     </table>
 </footer>
 
-<%--<script src="js/request.js"></script>--%>
 <script src="js/validator.js"></script>
 <script src="js/buttonChecks.js"></script>
-<script src="js/reloadTable.js"></script>
-<script src="js/clear.js"></script>
+<script src="js/svgClick.js"></script>
 </body>
 </html>
