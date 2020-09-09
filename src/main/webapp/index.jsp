@@ -127,7 +127,7 @@
                 </select>
                 <label for="r-choice"></label>
             </div>
-            <form action="<c:url value=""/>">
+            <form id="form" action="<c:url value=""/>">
                 <div class="input-header">
                     <input id="x-value" name="x" type="hidden" value="">
                     <input id="r-value" name="r" type="hidden" value="">
@@ -169,7 +169,7 @@
                 <td>${sessionScope.data.get(sessionScope.data.size()-i).x}</td>
                 <td>${sessionScope.data.get(sessionScope.data.size()-i).y}</td>
                 <td>${sessionScope.data.get(sessionScope.data.size()-i).r}</td>
-                <td>${sessionScope.data.get(sessionScope.data.size()-i).result}</td>
+                <td>${sessionScope.data.get(sessionScope.data.size()-i).result ? "Hit" : "Miss"}</td>
                 <td>${sessionScope.data.get(sessionScope.data.size()-i).reqTime}</td>
                 <td>${sessionScope.data.get(sessionScope.data.size()-i).compTime} ns</td>
             </tr>

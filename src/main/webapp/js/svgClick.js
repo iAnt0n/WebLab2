@@ -30,5 +30,5 @@ document.getElementById('graph').addEventListener('click', function (e) {
     xElem.value = "";
     const radio = document.querySelector('input[type="radio"]:checked');
     if (radio) radio.checked="";
-    document.getElementById('submit-button').removeAttribute("disabled");
+    document.getElementById('form').submit();
 });
