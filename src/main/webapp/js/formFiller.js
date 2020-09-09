@@ -35,6 +35,12 @@ function setY() {
 function setR() {
     const r = document.getElementById('r-choice').value;
     document.getElementById('r-value').setAttribute('value', r);
+    document.querySelectorAll('.svg-dot').forEach(function (elem) {
+        const rescX = 200 + elem.getAttributeNS(null, 'data-x')*180/r;
+        const rescY = 200 - elem.getAttributeNS(null, 'data-y')*180/r;
+        elem.setAttributeNS(null, 'cx', String(rescX)); //rescaling
+        elem.setAttributeNS(null, 'cy', String(rescY));
+    });
     return true;
 }
 
