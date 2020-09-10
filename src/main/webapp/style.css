@@ -147,7 +147,6 @@ input[type="radio"]{
 
 #result-rows td:first-child {
     word-break: break-all;
-    white-space: pre-wrap;
 }
 
 
