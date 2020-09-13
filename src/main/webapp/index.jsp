@@ -59,7 +59,7 @@
 
                 <circle cx="150" cy="150" fill="red" id="target-dot" r="0"></circle>
                 <c:forEach var="dataRow" items="${sessionScope.data}">
-                    <circle r="3" fill="gray" class="svg-dot" cx=${200 + dataRow.x * 180}
+                    <circle r="3" fill="rgba(186, 50, 50, 0.55)" class="svg-dot" cx=${200 + dataRow.x * 180}
                             cy=${200 - dataRow.y * 180}
                             data-x=${dataRow.x} data-y=${dataRow.y}></circle>
                 </c:forEach>

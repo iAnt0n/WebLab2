@@ -46,26 +46,14 @@ function setR() {
 
 function validate() {
     const button = document.getElementById('submit-button');
-    const dot = document.getElementById('target-dot');
 
     const xCheck = setX();
     const yCheck = setY();
     const rCheck = setR();
 
-    if (xCheck&&yCheck&&rCheck){
+    if (xCheck&&yCheck&&rCheck) {
         button.removeAttribute('disabled');
-        const x = Number(document.getElementById('x-value').value);
-        const y = Number(document.getElementById('y-value').value);
-        const r = Number(document.getElementById('r-value').value);
-        const calcX = 200 + x * 180 / r; //point coordinates to svg coordinates
-        const calcY = 200 - y * 180 / r;
-        dot.setAttribute('r', "3");
-        dot.setAttribute('cx', String(calcX));
-        dot.setAttribute('cy', String(calcY));
-     } else {
-         button.setAttribute("disabled", "");
-         dot.setAttribute('r', "0");
-     }
+    }
 }
 
 document.getElementById('x-choice').addEventListener('input', validate);

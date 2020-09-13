@@ -56,7 +56,7 @@
                 <c:out value="${requestScope.model.r}"/>
             </td>
             <td>
-                <c:out value="${requestScope.model.result}"/>
+                <c:out value="${requestScope.model.result ? \"Hit\" : \"Miss\"}"/>
             </td>
             <td>
                 <c:out value="${requestScope.model.reqTime}"/>
