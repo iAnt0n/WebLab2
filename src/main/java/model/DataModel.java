@@ -17,7 +17,7 @@ public class DataModel {
         this.r = r;
         long start = System.nanoTime();
         this.result = calculate(x,y,r);
-        compTime = System.nanoTime()-start;
+        compTime = (System.nanoTime()-start)/1000;
         reqTime = new Date();
     }
 

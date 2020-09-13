@@ -62,7 +62,7 @@
                 <c:out value="${requestScope.model.reqTime}"/>
             </td>
             <td>
-                <c:out value="${requestScope.model.compTime} ns"/>
+                <c:out value="${requestScope.model.compTime} mcs"/>
             </td>
         </tr>
         </tbody>

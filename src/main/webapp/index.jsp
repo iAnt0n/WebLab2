@@ -171,7 +171,7 @@
                 <td>${sessionScope.data.get(sessionScope.data.size()-i).r}</td>
                 <td>${sessionScope.data.get(sessionScope.data.size()-i).result ? "Hit" : "Miss"}</td>
                 <td>${sessionScope.data.get(sessionScope.data.size()-i).reqTime}</td>
-                <td>${sessionScope.data.get(sessionScope.data.size()-i).compTime} ns</td>
+                <td>${sessionScope.data.get(sessionScope.data.size()-i).compTime} mcs</td>
             </tr>
         </c:forEach>
         </tbody>

@@ -53,6 +53,10 @@ footer {
     flex-wrap: wrap;
 }
 
+.graph:hover {
+    box-shadow: 0 0 10px teal;
+}
+
 .input-text {
     border: 2px solid gray;
     border-radius: 10%;
