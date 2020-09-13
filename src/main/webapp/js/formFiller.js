@@ -3,7 +3,7 @@ function setX() {
     const xText = document.getElementById('x-header');
     const xElem = document.getElementById('x-choice');
     const realX = xElem.value.replace(',', '.');
-    if (realX !== "") {
+    if (realX !== ""&& !isNaN(realX)) {
         let floatX = parseFloat(realX.substring(0, 14));
         if(!Number.isNaN(floatX) && floatX > -3 && floatX < 5) {
             document.getElementById('x-value').setAttribute('value', realX);
