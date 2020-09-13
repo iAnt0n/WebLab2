@@ -58,7 +58,7 @@
                       fill="teal" fill-opacity="0.3" stroke="teal"></path>
 
                 <circle cx="150" cy="150" fill="red" id="target-dot" r="0"></circle>
-                <c:forEach var="dataRow" items="${sessionScope.data}">
+                <c:forEach var="dataRow" items="${sessionScope.dataList.list}">
                     <circle r="3" fill="rgba(186, 50, 50, 0.55)" class="svg-dot" cx=${200 + dataRow.x * 180}
                             cy=${200 - dataRow.y * 180}
                             data-x=${dataRow.x} data-y=${dataRow.y}></circle>
@@ -164,14 +164,14 @@
         </tr>
         </thead>
         <tbody id="result-rows">
-        <c:forEach var="i" begin="1" end="${sessionScope.data.size()}" step="1">
+        <c:forEach var="i" items="${sessionScope.dataList.list}">
             <tr>
-                <td>${sessionScope.data.get(sessionScope.data.size()-i).x}</td>
-                <td>${sessionScope.data.get(sessionScope.data.size()-i).y}</td>
-                <td>${sessionScope.data.get(sessionScope.data.size()-i).r}</td>
-                <td>${sessionScope.data.get(sessionScope.data.size()-i).result ? "Hit" : "Miss"}</td>
-                <td>${sessionScope.data.get(sessionScope.data.size()-i).reqTime}</td>
-                <td>${sessionScope.data.get(sessionScope.data.size()-i).compTime} mcs</td>
+                <td>${i.x}</td>
+                <td>${i.y}</td>
+                <td>${i.r}</td>
+                <td>${i.result ? "Hit" : "Miss"}</td>
+                <td>${i.reqTime}</td>
+                <td>${i.compTime} mcs</td>
             </tr>
         </c:forEach>
         </tbody>
