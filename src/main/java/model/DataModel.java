@@ -1,6 +1,8 @@
 package model;
 
 import java.math.BigDecimal;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class DataModel {
@@ -8,7 +10,7 @@ public class DataModel {
     private final String y;
     private final String r;
     private final boolean result;
-    private final Date reqTime;
+    private final String reqTime;
     private final long compTime;
 
     public DataModel(String x, String y, String r) {
@@ -18,7 +20,8 @@ public class DataModel {
         long start = System.nanoTime();
         this.result = calculate(x,y,r);
         compTime = (System.nanoTime()-start)/1000;
-        reqTime = new Date();
+        DateFormat df = new SimpleDateFormat("dd.MM.yyyy HH:mm:ss");
+        reqTime = df.format(new Date());
     }
 
     private boolean calculate(String sx, String sy, String sr){
@@ -56,7 +59,7 @@ public class DataModel {
         return result;
     }
 
-    public Date getReqTime() {
+    public String getReqTime() {
         return reqTime;
     }
 
